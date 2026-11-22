@@ -3,7 +3,7 @@ VERSION:2.0
 PRODID:-//fitness-app//reminders//ZH
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:健身訓練提醒（計畫 v3.3）
+X-WR-CALNAME:健身訓練提醒（計畫 v3.5）
 X-WR-TIMEZONE:Asia/Taipei
 BEGIN:VTIMEZONE
 TZID:Asia/Taipei
