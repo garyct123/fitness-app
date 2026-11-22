@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="zh-Hant">
+<html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="訓練">
-<meta name="theme-color" content="#111418">
+<meta name="theme-color" content="#0b0f17">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-180.png">
 <link rel="stylesheet" href="styles.css">
@@ -15,22 +15,16 @@
 </head>
 <body>
 <main id="app"></main>
-<nav id="tabs">
-  <button data-tab="today">今天</button>
-  <button data-tab="checklist">清單</button>
-  <button data-tab="records">紀錄</button>
-  <button data-tab="settings">設定</button>
-</nav>
+<nav id="tabs"><div></div></nav>
 <script type="module">
   // 網址帶 ?fresh 時，先清掉舊的離線快取再載入，確保拿到最新版（不會動到你的訓練資料）。
-  const V = '0.1.4';
   try {
     if (location.search.includes('fresh')) {
       for (const r of (await navigator.serviceWorker?.getRegistrations?.()) || []) await r.unregister();
       for (const k of await caches.keys()) await caches.delete(k);
     }
   } catch { /* 清不掉也照常載入 */ }
-  await import(`./src/app.js?v=${V}`);
+  await import(`./src/app.js?v=0.2.0`);
 </script>
 </body>
 </html>

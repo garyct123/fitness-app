@@ -1,6 +1,6 @@
 // 資料層：所有資料存在本機（瀏覽器 localStorage），可整包匯出、匯入。
 const KEY = 'fitness-app-v1';
-const EMPTY = () => ({ days: {}, sessions: [], sets: [], startWeights: {}, weekly: {} });
+const EMPTY = () => ({ days: {}, sessions: [], sets: [], startWeights: {}, weekly: {}, active: null, prefs: { voice: true, beep: true } });
 
 export function memoryBackend() {
   let raw = null;
@@ -117,6 +117,33 @@ export function createStore(backend) {
     },
     week(weekStart) { return data.weekly[weekStart] || {}; },
     allDays() { return Object.values(data.days); },
+
+    // 進行中的訓練（重新整理後還能接著做）
+    getActive() { return data.active; },
+    setActive(sess) { data.active = sess; persist(); },
+    clearActive() { data.active = null; persist(); },
+
+    prefs() { return data.prefs; },
+    setPref(k, v) { data.prefs = { ...data.prefs, [k]: v }; persist(); },
+
+    /**
+     * 把結束的訓練存進紀錄。
+     * 晚上重訓：建立 session + 每組；早晨：HIIT/冷水澡寫進當天；拉伸：寫進當天。
+     */
+    saveWorkout({ kind, date, day, test, status, sets, swaps }) {
+      if (kind === 'evening') {
+        const s = api.startSession({ date, day, kind: test ? 'test' : 'regular' });
+        for (const x of sets) {
+          api.logSet(s.id, {
+            exerciseId: x.exerciseId, exerciseName: x.exerciseName, swappedFrom: x.swappedFrom, setNo: x.setNo,
+            weight: x.weight, reps: x.reps, rir: x.rir, status: x.status, reason: x.reason, note: x.note,
+          });
+        }
+        if (swaps) api.updateSession(s.id, { swaps });
+        return api.finishSession(s.id, status);
+      }
+      return null;
+    },
 
     /** 清掉全部資料（設定頁的重置按鈕用）。 */
     reset() {

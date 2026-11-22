@@ -112,3 +112,32 @@ test('重置：清掉所有資料，重新載入也是空的', () => {
   const s2 = createStore(backend);
   assert.equal(s2.sessions().length, 0);
 });
+
+test('進行中的訓練可存取，重新載入後還在', () => {
+  const backend = memoryBackend();
+  const s = createStore(backend);
+  s.setActive({ id: 'x', index: 3 });
+  assert.equal(createStore(backend).getActive().index, 3);
+  s.clearActive();
+  assert.equal(createStore(backend).getActive(), null);
+});
+
+test('saveWorkout：晚上重訓存成 session 與每組，鑑測不進正式歷史', () => {
+  const s = mk();
+  const sets = [
+    { exerciseId: 'incline-press', exerciseName: '上斜臥推', setNo: 1, weight: 60, reps: 10, rir: 2, status: 'done' },
+    { exerciseId: 'cable-fly', exerciseName: '繩索夾胸', setNo: 1, status: 'skipped', reason: 'tired', reps: 0 },
+  ];
+  s.saveWorkout({ kind: 'evening', date: '2026-11-28', day: 'chest', test: false, status: 'partial', sets });
+  assert.equal(s.sessions()[0].status, 'partial');
+  assert.equal(s.history('incline-press').length, 1);
+  s.saveWorkout({ kind: 'evening', date: '2026-11-25', day: 'chest', test: true, status: 'done', sets: [sets[0]] });
+  assert.equal(s.history('incline-press').length, 1);
+});
+
+test('偏好預設開聲音、可改', () => {
+  const s = mk();
+  assert.equal(s.prefs().voice, true);
+  s.setPref('voice', false);
+  assert.equal(s.prefs().voice, false);
+});

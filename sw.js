@@ -1,7 +1,9 @@
 // 離線快取：有網路拿最新、沒網路用快取。改版時把 VERSION 加一。
-const VERSION = 'v0.1.8';
+const VERSION = 'v0.2.0';
 const FILES = ['./', 'index.html', 'styles.css', 'manifest.json', 'plan.json', 'icon-180.png', 'icon-512.png',
-  'src/app.js', 'src/store.js', 'src/sound.js', 'src/rules/rotation.js', 'src/rules/progression.js', 'src/rules/hiit.js', 'src/rules/today.js'];
+  'src/app.js', 'src/store.js', 'src/sound.js', 'src/ui/kit.js', 'src/lib/time.js', 'src/lib/csv.js',
+  'src/engine/steps.js', 'src/engine/workout.js', 'src/views/today.js', 'src/views/pages.js', 'src/views/workout.js',
+  'src/rules/rotation.js', 'src/rules/progression.js', 'src/rules/hiit.js', 'src/rules/today.js'];
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(VERSION).then((c) => c.addAll(FILES)).then(() => self.skipWaiting()));
 });

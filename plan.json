@@ -370,40 +370,76 @@
  ],
  "stretch": [
   {
+   "id": "chin-tuck",
    "name": "下巴內收",
-   "dose": "10 下 × 2 組"
+   "kind": "reps",
+   "reps": 10,
+   "sets": 2,
+   "cue": "像往後縮雙下巴"
   },
   {
+   "id": "upper-trap",
    "name": "上斜方肌拉伸",
-   "dose": "30 秒 × 每側"
+   "kind": "time",
+   "seconds": 30,
+   "perSide": true,
+   "cue": "頭往一邊側彎，手輕輕壓"
   },
   {
+   "id": "thoracic-ext",
    "name": "胸椎伸展",
-   "dose": "10 下"
+   "kind": "reps",
+   "reps": 10,
+   "sets": 1,
+   "cue": "雙手抱頭、靠椅背往後伸"
   },
   {
+   "id": "doorway-chest",
    "name": "門框胸大肌拉伸",
-   "dose": "30 秒 × 每側"
+   "kind": "time",
+   "seconds": 30,
+   "perSide": true,
+   "cue": "Doorway Chest Stretch"
   },
   {
+   "id": "hip-flexor",
    "name": "髖屈肌弓步拉伸",
-   "dose": "30 秒 × 每側"
+   "kind": "time",
+   "seconds": 30,
+   "perSide": true,
+   "cue": "Hip Flexor Stretch"
   },
   {
+   "id": "hamstring",
    "name": "大腿後側拉伸",
-   "dose": "30 秒 × 每側"
+   "kind": "time",
+   "seconds": 30,
+   "perSide": true,
+   "cue": "Hamstring Stretch"
   },
   {
+   "id": "figure-four",
    "name": "臀部 4 字拉伸",
-   "dose": "30 秒 × 每側"
+   "kind": "time",
+   "seconds": 30,
+   "perSide": true,
+   "cue": "Figure Four Stretch"
   },
   {
+   "id": "calf",
    "name": "小腿拉伸",
-   "dose": "30 秒 × 每側"
+   "kind": "time",
+   "seconds": 30,
+   "perSide": true,
+   "cue": "Calf Stretch"
   },
   {
+   "id": "cat-cow",
    "name": "貓牛式",
-   "dose": "10 下"
+   "kind": "reps",
+   "reps": 10,
+   "sets": 1,
+   "cue": "Cat-Cow"
   }
  ],
  "hiit": {
@@ -415,22 +451,26 @@
    "full": {
     "name": "全力版",
     "content": "Tabata：20 秒全力、休 10 秒、8 輪，休 1 分鐘，再 8 輪，共 9 分鐘",
-    "video": "https://www.youtube.com/watch?v=vI02okuNj-I"
+    "video": "https://www.youtube.com/watch?v=vI02okuNj-I",
+    "minutes": 9
    },
    "standard": {
     "name": "標準版",
     "content": "30 秒快、休 60 秒、8 輪，共 12 分鐘，強度約 8/10",
-    "video": "https://www.youtube.com/watch?v=vI02okuNj-I"
+    "video": "https://www.youtube.com/watch?v=vI02okuNj-I",
+    "minutes": 12
    },
    "low": {
     "name": "低衝擊版",
     "content": "不跳躍，30 秒中高強度、休 60 秒、8 輪，強度約 6/10",
-    "video": "https://www.youtube.com/watch?v=ntCOSg6E7nU"
+    "video": "https://www.youtube.com/watch?v=ntCOSg6E7nU",
+    "minutes": 12
    },
    "walk": {
     "name": "15 分鐘快走",
     "content": "睡不夠或心率偏高，改快走。這是計畫的一部分，不算偷懶。",
-    "video": null
+    "video": null,
+    "minutes": 15
    }
   }
  },
@@ -489,5 +529,36 @@
   "eatStart": "11:30",
   "eatEnd": "19:30",
   "caffeineCutoff": "14:00"
- }
+ },
+ "warmupMorning": {
+  "seconds": 300,
+  "title": "動態暖身",
+  "moves": [
+   "拳擊步（左右小跳步，手臂作出拳）",
+   "腳跟往後勾（原地踩，腳跟往臀部抬）",
+   "抬膝拉抱（往下拉手、抬膝）",
+   "側弓步轉體",
+   "深蹲接提踵",
+   "開合跳（低衝擊版改成手臂抬起、腳往側踩）",
+   "踢臀跑"
+  ]
+ },
+ "coldShower": {
+  "seconds": 60,
+  "title": "冷水澡",
+  "note": "洗完澡最後 30–60 秒轉冷水（不是冰水），每週可加 15–30 秒。有高血壓或心臟問題先問醫師。"
+ },
+ "warmupEvening": {
+  "seconds": 600,
+  "title": "重訓前熱身",
+  "moves": [
+   "輕有氧 3–5 分鐘（划船機、飛輪或快走），微微流汗",
+   "肩關節繞環 10 下",
+   "肩胛後縮 10 下",
+   "髖部繞圈每邊 10 下",
+   "貓牛式 10 下",
+   "第一個動作先做 2 組輕重量熱身（不計入）"
+  ]
+ },
+ "stretchNote": "拉伸到緊繃但不痛、不憋氣、不彈震。"
 }
