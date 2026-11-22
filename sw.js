@@ -1,5 +1,5 @@
 // 離線快取：有網路拿最新、沒網路用快取。改版時把 VERSION 加一。
-const VERSION = 'v0.1.7';
+const VERSION = 'v0.1.8';
 const FILES = ['./', 'index.html', 'styles.css', 'manifest.json', 'plan.json', 'icon-180.png', 'icon-512.png',
   'src/app.js', 'src/store.js', 'src/sound.js', 'src/rules/rotation.js', 'src/rules/progression.js', 'src/rules/hiit.js', 'src/rules/today.js'];
 self.addEventListener('install', (e) => {

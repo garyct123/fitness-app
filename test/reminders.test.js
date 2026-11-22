@@ -44,3 +44,8 @@ test('晚上事件標題不寫死哪一天，說明裡有 App 連結', () => {
 test('超過 75 字元的行會折行', () => {
   for (const line of ics.split('\r\n')) assert.ok(Buffer.byteLength(line) <= 75, line);
 });
+
+test('訂閱用：每小時更新一次', () => {
+  assert.ok(ics.includes('REFRESH-INTERVAL;VALUE=DURATION:PT1H'));
+  assert.ok(ics.includes('X-PUBLISHED-TTL:PT1H'));
+});

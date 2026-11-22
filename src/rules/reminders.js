@@ -47,6 +47,8 @@ export function buildICS(plan, { appUrl, stamp }) {
     'METHOD:PUBLISH',
     `X-WR-CALNAME:健身訓練提醒（計畫 v${plan.planVersion}）`,
     `X-WR-TIMEZONE:${tz}`,
+    'REFRESH-INTERVAL;VALUE=DURATION:PT1H',
+    'X-PUBLISHED-TTL:PT1H',
     'BEGIN:VTIMEZONE',
     `TZID:${tz}`,
     'BEGIN:STANDARD',
