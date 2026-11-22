@@ -1,0 +1,493 @@
+{
+ "planVersion": "3.3",
+ "source": "https://claude.ai/artifact/KcjAhAq5vgeR8kS1tBXUo9",
+ "timezone": "Asia/Taipei",
+ "rotation": [
+  "chest",
+  "legA",
+  "back",
+  "legB"
+ ],
+ "weekdays": {
+  "training": [
+   2,
+   3,
+   5,
+   6,
+   0
+  ],
+  "stretch": [
+   1,
+   4
+  ]
+ },
+ "regularStart": "2026-11-28",
+ "increments": {
+  "upper": 2.5,
+  "lower": 5
+ },
+ "skipReasons": [
+  {
+   "id": "injury",
+   "label": "受傷"
+  },
+  {
+   "id": "no-equipment",
+   "label": "沒器材"
+  },
+  {
+   "id": "tired",
+   "label": "太累"
+  },
+  {
+   "id": "other",
+   "label": "其他"
+  }
+ ],
+ "days": {
+  "chest": {
+   "name": "胸日",
+   "exercises": [
+    {
+     "id": "incline-press",
+     "name": "上斜臥推",
+     "en": "Incline Bench Press",
+     "sets": 4,
+     "repMin": 6,
+     "repMax": 10,
+     "restSec": 150,
+     "body": "upper",
+     "cue": "椅背約 30 度，肩胛骨夾緊下沉，槓下放到上胸，手肘約 45–75 度，設安全槓或找人保護。"
+    },
+    {
+     "id": "chest-press",
+     "name": "坐姿胸推機",
+     "en": "Chest Press Machine",
+     "sets": 3,
+     "repMin": 8,
+     "repMax": 12,
+     "restSec": 120,
+     "body": "upper",
+     "cue": "座椅調到把手與胸中線同高，肩胛骨靠椅背，推時手肘微彎不鎖死。"
+    },
+    {
+     "id": "cable-fly",
+     "name": "繩索夾胸",
+     "en": "Cable Fly",
+     "sets": 3,
+     "repMin": 12,
+     "repMax": 15,
+     "restSec": 75,
+     "body": "upper",
+     "cue": "一腳在前站穩，手肘微彎角度固定，往胸前合，感覺胸收縮，慢慢放。"
+    },
+    {
+     "id": "shoulder-press",
+     "name": "肩推機",
+     "en": "Shoulder Press Machine",
+     "sets": 3,
+     "repMin": 8,
+     "repMax": 12,
+     "restSec": 120,
+     "body": "upper",
+     "cue": "座椅調到把手在肩高，背靠椅背，推時不聳肩，手肘不鎖死。"
+    },
+    {
+     "id": "lateral-raise",
+     "name": "側平舉機",
+     "en": "Lateral Raise Machine",
+     "sets": 5,
+     "repMin": 12,
+     "repMax": 20,
+     "restSec": 60,
+     "body": "upper",
+     "cue": "手肘帶動往兩側抬到與肩同高，不聳肩，不用身體甩。",
+     "small": true
+    },
+    {
+     "id": "triceps-pushdown",
+     "name": "繩索三頭下壓",
+     "en": "Triceps Pushdown",
+     "sets": 3,
+     "repMin": 10,
+     "repMax": 15,
+     "restSec": 75,
+     "body": "upper",
+     "cue": "手肘貼身體固定，只動前臂，壓到底手肘伸直，慢慢放。",
+     "small": true
+    },
+    {
+     "id": "hanging-leg-raise",
+     "name": "懸吊舉腿",
+     "en": "Hanging Leg Raise",
+     "sets": 3,
+     "repMin": 8,
+     "repMax": 15,
+     "restSec": 60,
+     "body": "core",
+     "cue": "肩膀下沉不晃，骨盆往上捲，不只是抬腿，慢慢放。膝蓋彎著也可以。"
+    }
+   ]
+  },
+  "legA": {
+   "name": "腿A",
+   "exercises": [
+    {
+     "id": "squat",
+     "name": "槓鈴深蹲",
+     "en": "Barbell Squat",
+     "sets": 4,
+     "repMin": 6,
+     "repMax": 10,
+     "restSec": 180,
+     "body": "lower",
+     "cue": "槓放上背，腳與肩同寬略外八；吸氣腹部繃緊，膝蓋對著腳尖，下蹲到大腿約平行；腳跟踩實；設安全槓。"
+    },
+    {
+     "id": "single-leg-press",
+     "name": "單腳腿推機",
+     "en": "Single-Leg Press Machine",
+     "sets": 3,
+     "repMin": 10,
+     "repMax": 12,
+     "restSec": 120,
+     "body": "lower",
+     "cue": "腳踩踏板中間，膝蓋對腳尖，下放到膝約 90 度，不鎖死膝蓋，腰貼椅背不翹。",
+     "unilateral": "每腳"
+    },
+    {
+     "id": "leg-extension",
+     "name": "腿伸展機",
+     "en": "Leg Extension",
+     "sets": 3,
+     "repMin": 12,
+     "repMax": 15,
+     "restSec": 75,
+     "body": "lower",
+     "cue": "椅背調到膝蓋對準轉軸，頂端停 1 秒，慢慢放下。"
+    },
+    {
+     "id": "calf-raise",
+     "name": "提踵",
+     "en": "Calf Raise",
+     "sets": 4,
+     "repMin": 10,
+     "repMax": 15,
+     "restSec": 75,
+     "body": "lower",
+     "cue": "腳尖踩邊緣，腳跟放到最低拉伸，頂到最高停 1 秒。"
+    },
+    {
+     "id": "leg-a-abs",
+     "name": "懸吊舉腿或繩索捲腹",
+     "en": "Hanging Leg Raise / Cable Crunch",
+     "sets": 3,
+     "repMin": 10,
+     "repMax": 15,
+     "restSec": 60,
+     "body": "core",
+     "cue": "每下慢慢放（約 2 秒），不要用甩的。"
+    }
+   ]
+  },
+  "back": {
+   "name": "背日",
+   "exercises": [
+    {
+     "id": "lat-pulldown",
+     "name": "機械下拉",
+     "en": "Lat Pulldown",
+     "sets": 4,
+     "repMin": 6,
+     "repMax": 10,
+     "restSec": 150,
+     "body": "upper",
+     "cue": "大腿卡住壓墊，握距略寬於肩；先把肩膀下沉，再把手肘往下往後帶，拉到鎖骨；不往後仰借力。"
+    },
+    {
+     "id": "seated-row",
+     "name": "坐姿划船機",
+     "en": "Seated Row",
+     "sets": 3,
+     "repMin": 8,
+     "repMax": 12,
+     "restSec": 120,
+     "body": "upper",
+     "cue": "胸貼墊、肩胛骨先往後夾再拉手；手肘貼著身體往後，拉到腹部高度，停 1 秒，不聳肩。"
+    },
+    {
+     "id": "high-row",
+     "name": "高位划船機",
+     "en": "High Row",
+     "sets": 3,
+     "repMin": 10,
+     "repMax": 12,
+     "restSec": 90,
+     "body": "upper",
+     "cue": "手肘往外打開約 45–60 度，往後拉到手肘過身體，夾緊肩胛骨，不往後仰。"
+    },
+    {
+     "id": "reverse-pec-deck",
+     "name": "蝴蝶機反向飛鳥",
+     "en": "Reverse Pec Deck",
+     "sets": 4,
+     "repMin": 12,
+     "repMax": 20,
+     "restSec": 75,
+     "body": "upper",
+     "cue": "胸貼椅墊，手臂略彎，用手肘帶動往兩側往後打開，肩膀下沉，重量不要太重。"
+    },
+    {
+     "id": "lateral-raise",
+     "name": "側平舉機",
+     "en": "Lateral Raise Machine",
+     "sets": 3,
+     "repMin": 12,
+     "repMax": 20,
+     "restSec": 60,
+     "body": "upper",
+     "cue": "手肘帶動往兩側抬到與肩同高，不聳肩，不用身體甩。",
+     "small": true
+    },
+    {
+     "id": "biceps-curl",
+     "name": "機械二頭彎舉",
+     "en": "Biceps Curl Machine",
+     "sets": 3,
+     "repMin": 10,
+     "repMax": 12,
+     "restSec": 75,
+     "body": "upper",
+     "cue": "上臂貼墊，彎到頂端略停，放下到接近完全伸直，不甩。",
+     "small": true
+    },
+    {
+     "id": "rotary-torso",
+     "name": "旋轉腹肌機",
+     "en": "Rotary Torso Machine",
+     "sets": 3,
+     "repMin": 12,
+     "repMax": 15,
+     "restSec": 60,
+     "body": "core",
+     "cue": "坐穩、髖部固定，用腹部轉動上半身，不是用手臂甩；慢轉慢回。",
+     "unilateral": "每側"
+    }
+   ]
+  },
+  "legB": {
+   "name": "腿B",
+   "exercises": [
+    {
+     "id": "rdl",
+     "name": "羅馬尼亞硬舉",
+     "en": "Romanian Deadlift",
+     "sets": 3,
+     "repMin": 6,
+     "repMax": 10,
+     "restSec": 180,
+     "body": "lower",
+     "cue": "臀部往後推、膝蓋微彎不動、背打直，槓貼著腿下降到大腿後側有拉伸（約膝下），臀夾緊站起。"
+    },
+    {
+     "id": "hip-thrust",
+     "name": "臀推",
+     "en": "Hip Thrust",
+     "sets": 3,
+     "repMin": 8,
+     "repMax": 12,
+     "restSec": 120,
+     "body": "lower",
+     "cue": "上背靠板凳，腳掌踩平，頂端膝蓋約 90 度，下巴微收，頂端臀夾緊停 1 秒，不用腰拱。"
+    },
+    {
+     "id": "seated-leg-curl",
+     "name": "坐姿腿彎舉",
+     "en": "Seated Leg Curl",
+     "sets": 4,
+     "repMin": 10,
+     "repMax": 15,
+     "restSec": 90,
+     "body": "lower",
+     "cue": "膝蓋對準機器轉軸，壓墊在腳踝上方，彎到底慢慢放。"
+    },
+    {
+     "id": "hip-abduction",
+     "name": "髖外推",
+     "en": "Hip Abduction Machine",
+     "sets": 3,
+     "repMin": 12,
+     "repMax": 20,
+     "restSec": 60,
+     "body": "lower",
+     "cue": "背靠椅背，動作慢、不用甩力，終點停 1 秒。"
+    },
+    {
+     "id": "hip-adduction",
+     "name": "髖內夾",
+     "en": "Hip Adduction Machine",
+     "sets": 3,
+     "repMin": 12,
+     "repMax": 15,
+     "restSec": 60,
+     "body": "lower",
+     "cue": "背靠椅背，動作慢、不用甩力，終點停 1 秒。"
+    },
+    {
+     "id": "cable-crunch",
+     "name": "繩索捲腹",
+     "en": "Cable Crunch",
+     "sets": 3,
+     "repMin": 10,
+     "repMax": 15,
+     "restSec": 60,
+     "body": "core",
+     "cue": "跪姿，繩索在頭兩側，用腹部把上半身往骨盆捲，髖不動，不是用手拉。"
+    }
+   ]
+  }
+ },
+ "testWeek": [
+  {
+   "date": "2026-11-22",
+   "day": "back"
+  },
+  {
+   "date": "2026-11-24",
+   "day": "legA"
+  },
+  {
+   "date": "2026-11-25",
+   "day": "chest",
+   "skip": [
+    "lateral-raise"
+   ]
+  },
+  {
+   "date": "2026-11-27",
+   "day": "legB"
+  }
+ ],
+ "stretch": [
+  {
+   "name": "下巴內收",
+   "dose": "10 下 × 2 組"
+  },
+  {
+   "name": "上斜方肌拉伸",
+   "dose": "30 秒 × 每側"
+  },
+  {
+   "name": "胸椎伸展",
+   "dose": "10 下"
+  },
+  {
+   "name": "門框胸大肌拉伸",
+   "dose": "30 秒 × 每側"
+  },
+  {
+   "name": "髖屈肌弓步拉伸",
+   "dose": "30 秒 × 每側"
+  },
+  {
+   "name": "大腿後側拉伸",
+   "dose": "30 秒 × 每側"
+  },
+  {
+   "name": "臀部 4 字拉伸",
+   "dose": "30 秒 × 每側"
+  },
+  {
+   "name": "小腿拉伸",
+   "dose": "30 秒 × 每側"
+  },
+  {
+   "name": "貓牛式",
+   "dose": "10 下"
+  }
+ ],
+ "hiit": {
+  "start": "2026-11-24",
+  "fullMinSleep": 6.5,
+  "walkBelowSleep": 6,
+  "hrRiseWalk": 7,
+  "versions": {
+   "full": {
+    "name": "全力版",
+    "content": "Tabata：20 秒全力、休 10 秒、8 輪，休 1 分鐘，再 8 輪，共 9 分鐘",
+    "video": "https://www.youtube.com/watch?v=vI02okuNj-I"
+   },
+   "standard": {
+    "name": "標準版",
+    "content": "30 秒快、休 60 秒、8 輪，共 12 分鐘，強度約 8/10",
+    "video": "https://www.youtube.com/watch?v=vI02okuNj-I"
+   },
+   "low": {
+    "name": "低衝擊版",
+    "content": "不跳躍，30 秒中高強度、休 60 秒、8 輪，強度約 6/10",
+    "video": "https://www.youtube.com/watch?v=ntCOSg6E7nU"
+   },
+   "walk": {
+    "name": "15 分鐘快走",
+    "content": "睡不夠或心率偏高，改快走。這是計畫的一部分，不算偷懶。",
+    "video": null
+   }
+  }
+ },
+ "schedule": [
+  {
+   "time": "07:00",
+   "id": "weigh",
+   "title": "起床、量體重體脂、記睡眠"
+  },
+  {
+   "time": "07:15",
+   "id": "hiit",
+   "title": "HIIT"
+  },
+  {
+   "time": "07:30",
+   "id": "cold-shower",
+   "title": "洗澡，最後 30–60 秒轉冷水"
+  },
+  {
+   "time": "11:30",
+   "id": "first-meal",
+   "title": "第一餐 + 肌酸 5 g（蛋白質約 50 g）"
+  },
+  {
+   "time": "14:00",
+   "id": "protein-powder",
+   "title": "蛋白粉 + 優格或水果；之後不再喝咖啡茶"
+  },
+  {
+   "time": "14:30",
+   "id": "walk",
+   "title": "下午走路 20–30 分鐘"
+  },
+  {
+   "time": "19:00",
+   "id": "last-meal",
+   "title": "最後一餐，19:30 前吃完"
+  },
+  {
+   "time": "21:00",
+   "id": "evening",
+   "title": "重訓或拉伸修復"
+  },
+  {
+   "time": "22:30",
+   "id": "wind-down",
+   "title": "溫水澡、調暗燈，00:00 前睡"
+  }
+ ],
+ "targets": {
+  "proteinG": 160,
+  "waterMl": 2500,
+  "steps": 8000,
+  "creatineG": 5,
+  "eatStart": "11:30",
+  "eatEnd": "19:30",
+  "caffeineCutoff": "14:00"
+ }
+}
