@@ -445,11 +445,14 @@ function viewSettings() {
   return `<h1>設定</h1>
     <div class="card"><b>備份</b><div class="muted small">資料只存在這支 iPhone。每週匯出一次到 Google Drive。</div>
       <button class="primary block" data-act="export">匯出（分享到 Google Drive）</button>
+      <div class="muted small" style="margin-top:8px">跳出分享選單後選 Google Drive，存到：<b>我的雲端硬碟 → 健身訓練App → 備份</b>。檔名是 fitness-backup-日期.json，每次一個新檔，不會蓋掉舊的。</div>
       <label class="btn block">從檔案還原<input type="file" accept="application/json,.json" data-act="import" hidden></label></div>
     <div class="card"><b>提醒</b><div class="muted small">按下去，iPhone 會問你要不要把每日提醒加進日曆（07:00 起床、HIIT、11:30 第一餐、14:00 蛋白粉、19:00 最後一餐、21:00 訓練）。到時間日曆會跳通知，點通知可回到這個 App。計畫改版後再按一次，會更新原本的提醒，不會重複。</div>
       <a class="btn primary block" href="reminders.ics">同步提醒到手機</a>
       <div class="muted small" style="margin-top:8px">加進去之後，在日曆 App 的「行事曆」把這個提醒日曆的提醒打開即可。</div></div>
     <button class="block" data-act="tab" data-to="starts">起始重量</button>
+    <div class="card"><b>重置</b><div class="muted small">清掉這支手機上 App 的全部紀錄（體重、訓練、清單、起始重量），回到全新狀態。給你測試用；不會動 Google Drive 裡的備份。</div>
+      <button class="block bad" data-act="reset">重置全部資料</button></div>
     <div class="card small muted">計畫版本 v${plan.planVersion}。規則來源：增肌減脂訓練計畫。</div>`;
 }
 actions.export = async () => {
@@ -462,6 +465,12 @@ actions.export = async () => {
   } catch (e) { if (e.name === 'AbortError') return; }
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob); a.download = name; a.click();
+};
+actions.reset = () => {
+  if (!confirm('重置會清掉這支手機上 App 的全部紀錄，無法復原。\n建議先按「匯出」備份。\n\n確定要重置嗎？')) return;
+  if (!confirm('最後確認：真的要清掉全部紀錄嗎？')) return;
+  store.reset();
+  go({ tab: 'today' });
 };
 actions.import = async (el) => {
   const f = el.files?.[0];

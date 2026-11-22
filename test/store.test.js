@@ -97,3 +97,18 @@ test('換動作一定要有原因，並記下換成什麼', () => {
   assert.equal(s.session(a.id).swaps['cable-fly'], '啞鈴飛鳥');
   assert.equal(s.session(a.id).swapReasons['cable-fly'].reason, 'no-equipment');
 });
+
+test('重置：清掉所有資料，重新載入也是空的', () => {
+  const backend = memoryBackend();
+  const s = createStore(backend);
+  s.updateDay('2026-11-24', { weight: 85.6 });
+  const a = s.startSession({ date: '2026-11-28', day: 'chest', kind: 'regular' });
+  s.logSet(a.id, { exerciseId: 'incline-press', setNo: 1, weight: 60, reps: 10 });
+  s.setStartWeight('squat', 60);
+  s.reset();
+  assert.equal(s.sessions().length, 0);
+  assert.equal(s.startWeight('squat'), null);
+  assert.equal(s.getDay('2026-11-24').weight, undefined);
+  const s2 = createStore(backend);
+  assert.equal(s2.sessions().length, 0);
+});

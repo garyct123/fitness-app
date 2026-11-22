@@ -118,6 +118,12 @@ export function createStore(backend) {
     week(weekStart) { return data.weekly[weekStart] || {}; },
     allDays() { return Object.values(data.days); },
 
+    /** 清掉全部資料（設定頁的重置按鈕用）。 */
+    reset() {
+      data = EMPTY();
+      persist();
+    },
+
     exportJSON() {
       return JSON.stringify({ app: 'fitness-app', version: 1, exportedAt: new Date().toISOString(), data }, null, 1);
     },
