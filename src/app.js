@@ -13,6 +13,15 @@ const store = createStore(localBackend());
 const $app = document.getElementById('app');
 const $tabs = document.querySelector('#tabs > div');
 
+const ICON = {
+  today: '<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>',
+  schedule: '<rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="M8 14h3M13 14h3M8 17h3"/>',
+  progress: '<path d="M3 20h18"/><path d="M4 16l5-5 4 3 7-8"/><path d="M15 6h5v5"/>',
+  library: '<path d="M3 9v6M6 7v10M18 7v10M21 9v6M6 12h12"/>',
+  nutrition: '<path d="M12 3c3 3 5 5.5 5 9a5 5 0 0 1-10 0c0-3.5 2-6 5-9z"/><path d="M12 12v4"/>',
+  settings: '<circle cx="12" cy="12" r="3"/><path d="M12 2.5l2 2.2 3-.4.6 3 2.6 1.6-1.2 2.8 1.2 2.8-2.6 1.6-.6 3-3-.4-2 2.2-2-2.2-3 .4-.6-3-2.6-1.6L5.6 12 4.4 9.2 7 7.6l.6-3 3 .4z"/>',
+};
+const svg = (id) => `<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${ICON[id]}</svg>`;
 const TABS = [['today', '👊', '今日'], ['schedule', '📅', '課表'], ['progress', '📈', '進度'], ['library', '🎬', '動作'], ['nutrition', '🥩', '飲食'], ['settings', '⚙️', '設定']];
 const VIEWS = { today: today.view, schedule: pages.schedule, progress: pages.progress, library: pages.library, nutrition: pages.nutrition, settings: pages.settings };
 
@@ -155,7 +164,7 @@ function go(tab) {
   window.scrollTo(0, 0);
 }
 function render() {
-  $tabs.innerHTML = TABS.map(([id, ic, label]) => `<button data-tab="${id}" class="${ctx.tab === id ? 'on' : ''}"><span>${ic}</span>${label}</button>`).join('');
+  $tabs.innerHTML = TABS.map(([id, ic, label]) => `<button data-tab="${id}" class="${ctx.tab === id ? 'on' : ''}"><span>${svg(id)}</span>${label}</button>`).join('');
   $app.innerHTML = VIEWS[ctx.tab](ctx) + (store.getActive() && !ctx.workout.isOpen() ? '<button class="resume-fab" data-act="resume">▶ 繼續進行中的訓練</button>' : '');
 }
 today.init(ctx);

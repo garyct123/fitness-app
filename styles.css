@@ -48,8 +48,13 @@ nav#tabs { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; backgroun
   padding-bottom: var(--safe-b); backdrop-filter: blur(8px); }
 nav#tabs > div { max-width: 512px; margin: 0 auto; display: grid; grid-template-columns: repeat(6, 1fr); }
 nav#tabs button { background: none; border-radius: 0; flex-direction: column; padding: 6px 0; font-size: 11px; color: var(--dim); min-height: 54px; }
-nav#tabs button span { font-size: 20px; line-height: 24px; }
-nav#tabs button.on { color: var(--hero); }
+nav#tabs button { color: #5b6b86; letter-spacing: .06em; }
+nav#tabs button span { display: block; height: 26px; line-height: 0; }
+nav#tabs button.on { color: #22e4ff; }
+nav#tabs button.on svg { filter: drop-shadow(0 0 5px rgba(34,228,255,.9)); }
+nav#tabs button.on::after { content: ''; position: absolute; top: 0; width: 28px; height: 2px; background: #22e4ff; box-shadow: 0 0 8px #22e4ff; }
+nav#tabs button { position: relative; }
+nav#tabs { border-top-color: rgba(34,228,255,.25); }
 .resume-fab { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(var(--safe-b) + 70px); z-index: 30; border-radius: 999px;
   background: var(--hero); color: #000; padding: 10px 22px; box-shadow: 0 6px 20px rgba(0,0,0,.5); }
 
