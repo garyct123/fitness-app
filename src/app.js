@@ -1,5 +1,5 @@
 // 畫面。規則都在 src/rules/，資料在 src/store.js，這裡只負責顯示和操作。
-import { createStore, localBackend } from './store.js';
+import { createStore, localBackend } from './store.js?v=0.1.4';
 import { nextTarget, regressionStreak } from './rules/progression.js';
 import { hiitVersion } from './rules/hiit.js';
 import { todayItems, nowItem, workoutFor, sleepHours, eatingWindowCheck } from './rules/today.js';
