@@ -19,3 +19,6 @@ https://claude.ai/artifact/FXAhVzAEFLg9SpJGfPPAGR
 ## 已完成的開發項目
 1–10、12（今日指引、逐組記錄、組間倒數、鑑測、跳過與換動作要選原因、每日清單、匯出還原、加到主畫面）。
 未完成：13 發布到 iPhone（要 Gary 的 GitHub）、14 週回顧、15 成就。
+
+## 提醒
+`reminders.ics` 由 `plan.json` 產生（`npm run build:ics`），App 設定頁的「同步提醒到手機」連到它。計畫時間表改了就重新產生、推上去，並把 `sw.js` 的 VERSION 加一。
